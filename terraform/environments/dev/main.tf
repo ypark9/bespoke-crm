@@ -12,11 +12,10 @@ module "networking" {
   availability_zones   = var.availability_zones
 }
 
-# You can add other modules here as we develop them
-# module "compute" {
-#   source = "../../modules/aws/compute"
-#   ...
-# }
+module "user_management_lambda" {
+  source = "../../modules/aws/lambda"
+  # Add any necessary variables here
+}
 
 # module "database" {
 #   source = "../../modules/aws/database"
