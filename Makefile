@@ -4,10 +4,13 @@
 init-aws:
 	terraform -chdir=terraform/environments/dev init
 
-plan-aws:
+build-lambdas:
+	./scripts/build-lambdas.sh
+
+plan-aws: build-lambdas
 	terraform -chdir=terraform/environments/dev plan
 
-apply-aws:
+apply-aws: build-lambdas
 	terraform -chdir=terraform/environments/dev apply -auto-approve
 
 destroy-aws:

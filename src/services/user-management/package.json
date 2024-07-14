@@ -1,0 +1,19 @@
+{
+  "name": "user-management",
+  "version": "1.0.0",
+  "description": "User Management Lambda Function",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "package": "npm run build && cd dist && zip -r ../function.zip ."
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1001.0",
+    "@types/aws-lambda": "^8.10.85",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "typescript": "^4.5.2",
+    "@types/node": "^16.11.11"
+  }
+}
