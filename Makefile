@@ -16,7 +16,7 @@ apply-aws: build-lambdas
 destroy-aws:
 	terraform -chdir=terraform/environments/dev destroy -auto-approve
 
-# Azure commands (assuming you'll have a similar structure for Azure)
+# TODO Azure commands (assuming we'll have a similar structure for Azure)
 init-azure:
 	terraform -chdir=terraform/environments/dev-azure init
 
@@ -30,13 +30,13 @@ destroy-azure:
 	terraform -chdir=terraform/environments/dev-azure destroy -auto-approve
 
 # Combined commands
-# init-azure is not included here as it's not needed for the example
+# TODO init-azure is not included here yet.
 init: init-aws
-# plan-azure is not included here as it's not needed for the example
+# TODO plan-azure is not included here yet.
 plan: plan-aws
-# apply-azure is not included here as it's not needed for the example
+# TODO apply-azure is not included here yet.
 apply: apply-aws
-# destroy-azure is not included here as it's not needed for the example
+# TODO destroy-azure is not included here yet.
 destroy: destroy-aws
 
 teardown: destroy
