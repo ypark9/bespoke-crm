@@ -17,10 +17,10 @@ module "network" {
   subnet_cidrs = ["10.0.1.0/24", "10.0.2.0/24"]
 }
 
-output "aws_vpc_id" {
-  value = module.network.vpc_id
-}
+# output "aws_vpc_id" {
+#   value = module.network.vpc_id
+# }
 
-output "aws_subnet_ids" {
-  value = module.network.subnet_ids
-}
+# output "aws_subnet_ids" {
+#   value = module.network.subnet_ids
+# }
