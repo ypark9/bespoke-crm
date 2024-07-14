@@ -39,8 +39,6 @@ jobs:
             graphicsmagick-imagemagick-compat \
             webp
       - name: Build Terraform project with Makefile
-        run: |
-          make all
-        env:
-          # AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-          AWS_PROFILE: default
+        run: ENV=global make deploy
+      - name: Deploy website
+        run: ENV=prod make all
