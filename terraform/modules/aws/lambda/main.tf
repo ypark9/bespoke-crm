@@ -20,7 +20,7 @@ resource "aws_lambda_function" "user_management" {
   function_name    = "user-management"
   role             = aws_iam_role.lambda_exec.arn
   handler          = "index.handler"
-  runtime          = "nodejs14.x"
+  runtime          = "nodejs20.x"
   source_code_hash = data.archive_file.user_management_lambda.output_base64sha256
 
   environment {
