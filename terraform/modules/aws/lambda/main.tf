@@ -11,7 +11,7 @@ resource "aws_dynamodb_table" "users" {
 
 data "archive_file" "user_management_lambda" {
   type        = "zip"
-  source_dir  = "${path.module}/files"
+  source_dir  = "../../src/services/user-management"
   output_path = "${path.module}/files/user-management.zip"
 }
 
