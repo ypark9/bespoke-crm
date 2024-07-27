@@ -15,6 +15,8 @@ module "networking" {
 module "user_management_lambda" {
   source = "../../modules/aws/lambda"
   # Add any necessary variables here
+  workos_api_key = var.workos_api_key
+  workos_client_id = var.workos_client_id
 }
 
 # module "database" {

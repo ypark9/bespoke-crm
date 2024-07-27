@@ -24,6 +24,9 @@ jobs:
 
   terraform:
     runs-on: ubuntu-latest
+    env:
+      WORKOS_API_KEY: ${{ secrets.WORKOS_API_KEY }}
+      WORKOS_CLIENT_ID: ${{ secrets.WORKOS_CLIENT_ID }}
     steps:
       - uses: actions/checkout@v2
 

@@ -11,7 +11,7 @@ resource "aws_dynamodb_table" "users" {
 
 data "archive_file" "user_management_lambda" {
   type        = "zip"
-  source_dir  = "../../src/services/user-management"
+  source_dir  = "${path.module}/files"
   output_path = "${path.module}/files/user-management.zip"
 }
 
@@ -26,6 +26,8 @@ resource "aws_lambda_function" "user_management" {
   environment {
     variables = {
       USER_TABLE_NAME = aws_dynamodb_table.users.name
+      WORKOS_API_KEY = var.workos_api_key
+      WORKOS_CLIENT_ID = var.workos_client_id
     }
   }
 }

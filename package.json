@@ -1,0 +1,14 @@
+{
+  "name": "bespoke-crm",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {},
+  "devDependencies": {
+    "concurrently": "^6.0.0"
+  },
+  "dependencies": {
+    "axios": "^1.7.2",
+    "next-auth": "^4.24.7",
+    "workos": "^0.0.24"
+  }
+}

@@ -27,3 +27,13 @@ variable "availability_zones" {
   description = "List of availability zones for the bespoke-crm project"
   default     = ["us-east-2a", "us-east-2b"]
 }
+
+variable "workos_api_key" {
+  description = "WorkOS API Key"
+  type        = string
+}
+
+variable "workos_client_id" {
+  description = "WorkOS Client ID"
+  type        = string
+}
