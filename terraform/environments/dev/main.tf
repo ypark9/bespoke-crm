@@ -23,3 +23,13 @@ module "user_management_lambda" {
 #   source = "../../modules/aws/database"
 #   ...
 # }
+
+module "frontend" {
+  source      = "../../modules/aws/frontend"
+  app_name    = "bespoke-crm"
+  environment = var.environment
+}
+
+output "frontend_url" {
+  value = "http://${module.frontend.website_endpoint}"
+}
