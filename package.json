@@ -2,7 +2,9 @@
   "name": "bespoke-crm",
   "version": "1.0.0",
   "private": true,
-  "scripts": {},
+  "scripts": {
+    "start-frontend": "cd src/bespoke-crm-frontend && npm run dev"
+  },
   "devDependencies": {
     "concurrently": "^6.0.0"
   },

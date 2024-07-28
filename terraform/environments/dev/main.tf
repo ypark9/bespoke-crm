@@ -33,3 +33,31 @@ module "frontend" {
 output "frontend_url" {
   value = "http://${module.frontend.website_endpoint}"
 }
+
+module "cognito" {
+  source      = "../../modules/aws/cognito"
+  app_name    = "bespoke-crm"
+  environment = var.environment
+}
+
+output "cognito_user_pool_id" {
+  value = module.cognito.user_pool_id
+}
+
+output "cognito_client_id" {
+  value = module.cognito.client_id
+}
+
+output "cognito_client_secret" {
+  value     = module.cognito.client_secret
+  sensitive = true
+}
+
+output "cognito_domain" {
+  value = module.cognito.cognito_domain
+}
+
+output "aws_region" {
+  value = var.region
+  description = "The AWS region used for this deployment"
+}
