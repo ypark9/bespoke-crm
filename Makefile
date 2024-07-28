@@ -13,6 +13,9 @@ plan-aws: build-lambdas
 apply-aws: build-lambdas
 	terraform -chdir=terraform/environments/dev apply -auto-approve
 
+update-env:
+	./scripts/update_env.sh
+
 destroy-aws:
 	terraform -chdir=terraform/environments/dev destroy -auto-approve
 
@@ -35,7 +38,7 @@ init: init-aws
 # TODO plan-azure is not included here yet.
 plan: plan-aws
 # TODO apply-azure is not included here yet.
-apply: apply-aws
+apply: apply-aws update-env
 # TODO destroy-azure is not included here yet.
 destroy: destroy-aws
 
